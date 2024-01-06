@@ -55,6 +55,10 @@ function App() {
         socket.emit('change-student-name', {id, name})
     }
 
+    const addStudent = (name) => {
+        socket.emit('add-student', { name })
+    }
+
   return (
     <section className="container">
       <header className="alert">
@@ -80,7 +84,7 @@ function App() {
           />
         </div>
         <div className="col-4">
-          <StudentAdd />
+          <StudentAdd addStudent={addStudent}/>
         </div>
       </article>
     </section>

@@ -32,6 +32,12 @@ class Socket {
         this.io.emit('current-students', this.studentList.getStudents());
       })
 
+      socket.on('add-student', ({ name }) => {
+        this.studentList.addStudent(name);
+
+        this.io.emit('current-students', this.studentList.getStudents());
+      })
+
     })
   }
 }
